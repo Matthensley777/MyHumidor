@@ -41,6 +41,22 @@ namespace MyHumidor.Services
             }
         }
 
+        public IEnumerable<CigarDTO> ListAllCigars()
+        {
+            using (var db = GetConnection())
+            {
+                db.Open();
+                var getCigarList = db.Query<CigarDTO>(@"SELECT Cigar.CigarID
+                                                                    , Cigar.Brand
+                                                                    , Cigar.Series
+                                                                    , Cigar.Description
+                                                                    , Cigar.Photo
+                                                                    , Cigar.DatePurchased 
+                                                            FROM Cigar");
+
+                return getCigarList;
+            }
+        }
 
 
     }

@@ -10,7 +10,7 @@ using MyHumidor.Services;
 
 namespace MyHumidor.Controllers
 {
-    [RoutePrefix("api/employees")]
+    [RoutePrefix("api/cigars")]
     public class CigarController
     {
             [Route, HttpGet]
