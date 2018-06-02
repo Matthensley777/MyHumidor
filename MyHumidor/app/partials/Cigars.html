@@ -1,0 +1,29 @@
+﻿<h2>My Humidor</h2>
+<ul ng-repeat="cigar in cigars">
+    <li>
+        <a ng-click="cigarDetail(cigar.CigarID)">
+            Cigar {{cigar.CigarID}}, {{cigar.Brand}} {{cigar.Series}}
+            {{cigar.Description}} {{cigar.Photo}} {{cigar.DatePurchased}}
+        </a>
+    </li>
+</ul>
+<button type="button" class="btn btn-default" ng-click="AddNewCigar()">Add New</button>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

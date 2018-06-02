@@ -11,7 +11,7 @@ using MyHumidor.Services;
 namespace MyHumidor.Controllers
 {
     [RoutePrefix("api/cigars")]
-    public class CigarController
+    public class CigarController : ApiController
     {
             [Route, HttpGet]
             public HttpResponseMessage GetList()
