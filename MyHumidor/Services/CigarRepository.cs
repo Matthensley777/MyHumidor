@@ -28,7 +28,7 @@ namespace MyHumidor.Services
                                                        ,[Series]
                                                        ,[Description]
                                                        ,[Photo]
-                                                       ,[DatePurchased]
+                                                       ,[DatePurchased])
                                                     VALUES
                                                         (@CigarID,
                                                          @Brand,
