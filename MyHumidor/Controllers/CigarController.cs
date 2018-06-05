@@ -31,7 +31,16 @@ namespace MyHumidor.Controllers
                 if (result)
                     return Request.CreateResponse(HttpStatusCode.Created);
                 return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, "no!");
-            }         
+            }
+
+        [Route("{Id}"), HttpPut]
+        public HttpResponseMessage Edit(CigarDTO cigar, int id)
+        {
+            var repository = new CigarRepository();
+            var result = repository.Edit(cigar, id);
+
+            return Request.CreateResponse(HttpStatusCode.OK, result);
+        }
 
     }
 }

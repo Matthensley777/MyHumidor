@@ -58,6 +58,22 @@ namespace MyHumidor.Services
             }
         }
 
+        public bool Edit(CigarDTO cigar, int id)
+        {
+            using (var db = GetConnection())
+            {
+                cigar.CigarID = id;
+                db.Open();
+                var result = db.Execute(@"UPDATE [dbo].[Cigar]
+                                             SET [Brand] = @brand
+                                                ,[Series] = @Series
+                                                ,[Description] = @description
+                                                ,[Photo] = @photo
+                                          WHERE cigarID = @cigarID", cigar);
+
+                return result == 1;
+            }
+        }
 
     }
 }

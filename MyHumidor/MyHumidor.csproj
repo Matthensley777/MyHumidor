@@ -178,10 +178,12 @@
   <ItemGroup>
     <Content Include="app\app.js" />
     <Content Include="app\Controllers\CigarController.js" />
+    <Content Include="app\Controllers\CigarDetailController.js" />
     <Content Include="app\Controllers\NewCigarController.js" />
     <Content Include="app\Controllers\NewWhiskeyController.js" />
     <Content Include="app\Controllers\WhiskeyController.js" />
     <Content Include="app\partials\Cigars.html" />
+    <Content Include="app\partials\cigar_detail.html" />
     <Content Include="app\partials\new_cigar.html" />
     <Content Include="app\partials\new_whiskey.html" />
     <Content Include="app\partials\Whiskey.html" />
