@@ -16,7 +16,7 @@ app.config([
             })
             .when("/whiskeys",
             {
-                templateUrl: '/app/partials/Whiskeys.html',
+                templateUrl: '/app/partials/Whiskey.html',
                 controller: 'WhiskeyController'
             })
             .when("/whiskeys/new",

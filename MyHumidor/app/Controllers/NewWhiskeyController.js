@@ -4,7 +4,7 @@
         $scope.new = (Whiskey) => {
 
             $http.post("/api/whiskeys/", Whiskey).then(function () {
-                $location.path(`/whiskeys`);
+                $location.path(`/whiskey`);
             }).catch((err) => {
                 console.log("error posting new whiskey", err);
             });
