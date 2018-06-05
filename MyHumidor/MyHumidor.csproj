@@ -163,6 +163,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\CigarController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\WhiskeyController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -172,13 +173,18 @@
     <Compile Include="Models\WhiskeyDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\CigarRepository.cs" />
+    <Compile Include="Services\WhiskeyRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\app.js" />
     <Content Include="app\Controllers\CigarController.js" />
     <Content Include="app\Controllers\NewCigarController.js" />
+    <Content Include="app\Controllers\NewWhiskeyController.js" />
+    <Content Include="app\Controllers\WhiskeyController.js" />
     <Content Include="app\partials\Cigars.html" />
     <Content Include="app\partials\new_cigar.html" />
+    <Content Include="app\partials\new_whiskey.html" />
+    <Content Include="app\partials\Whiskey.html" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />

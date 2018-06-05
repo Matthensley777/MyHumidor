@@ -1,0 +1,10 @@
+﻿<h2>My Whiskeys</h2>
+<ul ng-repeat="whiskey in whiskeys">
+    <li>
+        <a ng-click="whiskeyDetail(whiskey.WhiskeyID)">
+            Whiskey {{Whiskey.WhiskeyID}}, Brand {{Whiskey.Brand}} Type {{Whiskey.Type}}
+            
+        </a>
+    </li>
+</ul>
+<button type="button" class="btn btn-default" ng-click="AddNewWhiskey()">Add New</button>

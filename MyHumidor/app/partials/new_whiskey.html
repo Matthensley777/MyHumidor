@@ -1,0 +1,23 @@
+﻿<h2>Add New Whiskey</h2>
+
+<form ng-submit="new(Whiskey)" class="form-horizontal">
+    <div class="form-group">
+        <label for="Whiskey.Brand" class="control-label col-xs-4">Brand</label>
+        <div class="col-xs-8">
+            <input ng-model="Whiskey.Brand" id="Whiskey.Brand" name="Whiskey.Brand" type="text" class="form-control" required="required">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="Whiskey.Type" class="control-label col-xs-4">Type</label>
+        <div class="col-xs-8">
+            <input ng-model="Whiskey.Type" id="Whiskey.type" name="Whiskey.Type" type="text" class="form-control" required="required">
+        </div>
+    </div>
+    
+
+    <div class="form-group row">
+        <div class="col-xs-offset-4 col-xs-8">
+            <button name="submit" type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </div>
+</form>
