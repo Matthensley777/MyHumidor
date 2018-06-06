@@ -23,11 +23,11 @@ namespace MyHumidor.Services
 
                 db.Open();
                 var addWhiskey = db.Execute(@"INSERT INTO [dbo].[Whiskey]
-                                                       ([WhiskeyID]
-                                                       ,[Brand]
+                                                       (
+                                                       [Brand]
                                                        ,[Type])
                                                     VALUES
-                                                        (@WhiskeyID,
+                                                        (
                                                          @Brand,
                                                          @Type)", whiskey);
 

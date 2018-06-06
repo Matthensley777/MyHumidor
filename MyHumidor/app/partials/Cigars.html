@@ -2,8 +2,8 @@
 <ul ng-repeat="cigar in cigars">
     <li>
         <a ng-click="cigarDetail(cigar.CigarID)">
-            Cigar {{cigar.CigarID}}, Brand {{cigar.Brand}} Series {{cigar.Series}}
-            Description {{cigar.Description}} Image {{cigar.Photo}} Purchased Date {{cigar.DatePurchased}}
+            Cigar {{cigar.CigarID}}, Brand {{cigar.Brand}}, Series {{cigar.Series}},
+            Description {{cigar.Description}}, {{cigar.Photo}} Purchased Date {{cigar.DatePurchased}}
         </a>
     </li>
 </ul>

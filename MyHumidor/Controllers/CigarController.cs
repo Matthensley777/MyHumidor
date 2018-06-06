@@ -42,5 +42,16 @@ namespace MyHumidor.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, result);
         }
 
+        [Route("{Id}"), HttpGet]
+        public HttpResponseMessage GetCigar(int id)
+        {
+            var repository = new CigarRepository();
+            var result = repository.GetCigarById(id);
+
+            return Request.CreateResponse(HttpStatusCode.OK, result);
+        }
+
+        
+
     }
 }

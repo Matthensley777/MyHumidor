@@ -24,6 +24,11 @@ app.config([
                 templateUrl: '/app/partials/new_whiskey.html',
                 controller: 'NewWhiskeyController'
             })
+            .when("/cigars/:id",
+            {
+                templateUrl: '/app/partials/cigar_detail.html',
+                controller: 'CigarDetailController'
+            })
             
     }
 ]);

@@ -5,7 +5,7 @@
             $scope.cigars = result.data;
         });
 
-        $scope.cigarsDetail = (cigarId) => {
+        $scope.cigarDetail = (cigarId) => {
             $location.path(`/cigars/${cigarId}`);
         };
 

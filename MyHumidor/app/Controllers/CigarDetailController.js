@@ -5,15 +5,21 @@
 
         $http.get(`/api/cigars/${$routeParams.id}`).then((result) => {
             
-            $scope.cigar = result.data;
+            $scope.Cigar = result.data;
         });
 
         $scope.edits = () => {
             $scope.edit = true;
         }
 
-        
-
+        $scope.saveEdits = (Cigar) => {
+            $http.put(`/api/cigars/${$routeParams.id}`, Cigar).then((result) => {
+                $location.path(`/cigars/`);
+            })
+            
+            console.log(Cigar);
+        }
+       
        
 
     }

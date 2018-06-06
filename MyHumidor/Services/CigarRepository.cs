@@ -23,15 +23,13 @@ namespace MyHumidor.Services
 
                 db.Open();
                 var addCigar = db.Execute(@"INSERT INTO [dbo].[Cigar]
-                                                       ([CigarID]
-                                                       ,[Brand]
+                                                       ([Brand]
                                                        ,[Series]
                                                        ,[Description]
                                                        ,[Photo]
                                                        ,[DatePurchased])
                                                     VALUES
-                                                        (@CigarID,
-                                                         @Brand,
+                                                        (@Brand,
                                                          @Series,
                                                          @Description,
                                                          @Photo,
@@ -74,6 +72,25 @@ namespace MyHumidor.Services
                 return result == 1;
             }
         }
+
+        public CigarDTO GetCigarById(int id)
+        {
+            using (var db = GetConnection())
+            {
+                db.Open();
+                var result = db.QueryFirstOrDefault<CigarDTO>(@"SELECT [CigarID]
+                                                                          ,[Brand]
+                                                                          ,[Series]
+                                                                          ,[Description]
+                                                                          ,[Photo]
+                                                                      FROM [dbo].[Cigar]
+                                                                      WHERE CigarID = @id", new { id });
+
+                return result;
+            }
+        }
+
+        
 
     }
 }
