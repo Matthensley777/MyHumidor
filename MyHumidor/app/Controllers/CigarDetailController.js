@@ -1,5 +1,5 @@
 ﻿app.controller("CigarDetailController", ["$location", "$routeParams", "$scope", "$http",
-    function ($location, $routeParams, $scope, $http) {
+    function ($location, $routeParams, $scope, $http, $window) {
 
         $scope.edit = false;
 
@@ -19,8 +19,14 @@
             
             console.log(Cigar);
         }
-       
-       
+
+        $scope.DeleteCigar = () => {
+
+            $http.delete(`/api/cigars/${$routeParams.id}/delete`);
+            $location.path(`/cigars/`);
+        };
+
+        
 
     }
 ]);

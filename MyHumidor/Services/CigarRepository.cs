@@ -90,7 +90,17 @@ namespace MyHumidor.Services
             }
         }
 
-        
+        public bool Delete(int id)
+        {
+            using (var db = GetConnection())
+            {
+                db.Open();
+                var result = db.Execute(@"DELETE FROM Cigar WHERE CigarID = @id", new { id });
+
+                return result >= 1;
+            }
+        }
+
 
     }
 }

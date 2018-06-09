@@ -33,5 +33,16 @@ namespace MyHumidor.Controllers
             return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, "no!");
         }
 
+        [Route("{id}/delete"), HttpDelete]
+        public HttpResponseMessage DeleteWhiskey(int id)
+        {
+            var repo = new WhiskeyRepository();
+            var result = repo.Delete(id);
+
+            return result
+                ? Request.CreateResponse(HttpStatusCode.OK)
+                : Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Whiskey can't be deleted");
+        }
+
     }
 }

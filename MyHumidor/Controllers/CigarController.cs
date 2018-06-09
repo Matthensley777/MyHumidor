@@ -51,7 +51,16 @@ namespace MyHumidor.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, result);
         }
 
-        
+        [Route("{id}/delete"), HttpDelete]
+        public HttpResponseMessage DeleteCigar(int id)
+        {
+            var repo = new CigarRepository();
+            var result = repo.Delete(id);
+
+            return result
+                ? Request.CreateResponse(HttpStatusCode.OK)
+                : Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Cigar can't be deleted");
+        }
 
     }
 }
