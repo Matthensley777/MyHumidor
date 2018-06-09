@@ -29,6 +29,10 @@ app.config([
                 templateUrl: '/app/partials/cigar_detail.html',
                 controller: 'CigarDetailController'
             })
+            .otherwise({
+                templateUrl: '/app/partials/Cigars.html',
+                controller: 'CigarController'
+            });
             
     }
 ]);
