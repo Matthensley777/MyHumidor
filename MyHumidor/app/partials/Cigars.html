@@ -1,14 +1,18 @@
 ﻿<h2>My Humidor</h2>
+<br />
+<button type="button" class="btn btn-default" ng-click="AddNewCigar()">Add New</button>
+<br />
+<br />
 <ul ng-repeat="cigar in cigars" class="col-sm-6 col-md-4 photo">
     <li>
         <a ng-click="cigarDetail(cigar.CigarID)">
-            <img class="image" id="image" ng-src="{{cigar.Photo}}"/><br />
+            <img class="image" id="image" ng-src="{{cigar.Photo}}" /><br />
             Cigar {{cigar.CigarID}}, Brand {{cigar.Brand}}, Series {{cigar.Series}}, <br />
             Description {{cigar.Description}}, <br />Purchased Date {{cigar.DatePurchased}}
         </a>
     </li>
 </ul>
-<button type="button" class="btn btn-default" ng-click="AddNewCigar()">Add New</button>
+<br />
 
 
 

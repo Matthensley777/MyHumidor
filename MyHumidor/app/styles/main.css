@@ -1,7 +1,11 @@
 ﻿.image {
-    width: 400px;
+    width: 250px;
 }
 
 .photo {
     list-style-type: none;
+}
+
+body {
+    background-color: cornsilk;
 }
