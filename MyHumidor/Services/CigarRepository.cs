@@ -27,12 +27,16 @@ namespace MyHumidor.Services
                                                        ,[Series]
                                                        ,[Description]
                                                        ,[Photo]
+                                                       ,[WhiskeyID]
+                                                       ,[UserID]
                                                        ,[DatePurchased])
                                                     VALUES
-                                                        (@Brand,
+                                                        (@CigarBrand,
                                                          @Series,
                                                          @Description,
                                                          @Photo,
+                                                         @WhiskeyID,
+                                                         @UserID,
                                                          @DatePurchased)", cigar);
 
                 return addCigar == 1;
@@ -45,12 +49,18 @@ namespace MyHumidor.Services
             {
                 db.Open();
                 var getCigarList = db.Query<CigarDTO>(@"SELECT Cigar.CigarID
-                                                                    , Cigar.Brand
+                                                                    , Cigar.Brand as CigarBrand
                                                                     , Cigar.Series
                                                                     , Cigar.Description
                                                                     , Cigar.Photo
+                                                                    , Cigar.WhiskeyID
+                                                                    , Cigar.UserID
                                                                     , Cigar.DatePurchased 
-                                                            FROM Cigar");
+                                                                    , whiskey.Brand as WhiskeyBrand
+
+                                                            FROM Cigar
+                                                                    join whiskey on cigar.WhiskeyID = whiskey.WhiskeyID");
+
 
                 return getCigarList;
             }
@@ -63,10 +73,11 @@ namespace MyHumidor.Services
                 cigar.CigarID = id;
                 db.Open();
                 var result = db.Execute(@"UPDATE [dbo].[Cigar]
-                                             SET [Brand] = @brand
+                                             SET [Brand] = @CigarBrand
                                                 ,[Series] = @Series
                                                 ,[Description] = @description
                                                 ,[Photo] = @photo
+                                                ,[WhiskeyID] = @WhiskeyID
                                           WHERE cigarID = @cigarID", cigar);
 
                 return result == 1;
@@ -79,11 +90,14 @@ namespace MyHumidor.Services
             {
                 db.Open();
                 var result = db.QueryFirstOrDefault<CigarDTO>(@"SELECT [CigarID]
-                                                                          ,[Brand]
+                                                                          ,C.Brand as [CigarBrand]
                                                                           ,[Series]
                                                                           ,[Description]
                                                                           ,[Photo]
-                                                                      FROM [dbo].[Cigar]
+                                                                          ,W.[WhiskeyID]
+                                                                          ,W.Brand as WhiskeyBrand
+                                                                      FROM [Cigar] as C
+                                                                        join whiskey as W on C.WhiskeyID = W.WhiskeyID
                                                                       WHERE CigarID = @id", new { id });
 
                 return result;

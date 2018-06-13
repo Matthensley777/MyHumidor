@@ -17,7 +17,7 @@ namespace MyHumidor.Services
             using (var db = GetConnection())
             {
                 db.Open();
-                var result = db.QueryFirstOrDefault<WhiskeyCigarDTO>(@"select * from WhiskeyCigar where CigarID = @id", new { id });
+                var result = db.QueryFirstOrDefault<WhiskeyCigarDTO>(@"select * from Cigar where CigarID = @id", new { id });
 
                 return result;
             }
@@ -27,7 +27,7 @@ namespace MyHumidor.Services
             using (var db = GetConnection())
             {
                 db.Open();
-                var result = db.QueryFirstOrDefault<WhiskeyCigarDTO>(@"select * from WhiskeyCigar where WhiskeyID = @id", new { id });
+                var result = db.QueryFirstOrDefault<WhiskeyCigarDTO>(@"select * from Whiskey where WhiskeyID = @id", new { id });
 
                 return result;
             }

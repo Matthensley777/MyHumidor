@@ -3,6 +3,10 @@
 
         $scope.edit = false;
 
+        $http.get("/api/whiskeys/").then(function (result) {
+            $scope.whiskeys = result.data;
+        });
+
         $http.get(`/api/cigars/${$routeParams.id}`).then((result) => {
             
             $scope.Cigar = result.data;
@@ -17,7 +21,6 @@
                 $location.path(`/cigars/`);
             })
             
-            console.log(Cigar);
         }
 
         $scope.DeleteCigar = () => {
@@ -25,6 +28,8 @@
             $http.delete(`/api/cigars/${$routeParams.id}/delete`);
             $location.path(`/cigars/`);
         };
+
+        
 
         
 

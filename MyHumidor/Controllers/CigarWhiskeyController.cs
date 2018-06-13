@@ -5,10 +5,10 @@ using System.Web.Http;
 
 namespace MyHumidor.Controllers
 {
-    [RoutePrefix("api/cigars")]
-    public class EmployeeComputerController : ApiController
+    [RoutePrefix("api/whiskeycigars")]
+    public class CigarwhiskeyController : ApiController
     {
-        [Route("{id}"), HttpGet]
+        [Route("{id}/cigar"), HttpGet]
         public HttpResponseMessage GetByCigarId(int id)
         {
             var repo = new CigarWhiskeyRepository();
@@ -17,10 +17,10 @@ namespace MyHumidor.Controllers
 
             return (result != null)
                 ? Request.CreateResponse(HttpStatusCode.OK, result)
-                : Request.CreateErrorResponse(HttpStatusCode.InternalServerError, "Could not get Cigar by ID");
+                : Request.CreateErrorResponse(HttpStatusCode.InternalServerError, "No Cigar for you!");
         }
 
-        [Route("{id}/cigar"), HttpGet]
+        [Route("{id}/whiskey"), HttpGet]
         public HttpResponseMessage GetByWhiskeyId(int id)
         {
             var repo = new CigarWhiskeyRepository();
@@ -28,7 +28,7 @@ namespace MyHumidor.Controllers
 
             return (result != null)
                 ? Request.CreateResponse(HttpStatusCode.OK, result)
-                : Request.CreateResponse(HttpStatusCode.NoContent, result = null);
+                : Request.CreateResponse(HttpStatusCode.InternalServerError, "no Whiskey for you!");
         }
     }
 }
