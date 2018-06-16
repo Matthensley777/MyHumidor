@@ -35,19 +35,21 @@ namespace MyHumidor.Services
             }
         }
 
-        public IEnumerable<WhiskeyDTO> ListAllWhiskeys()
+
+        public IEnumerable<WhiskeyDTO> ListAllWhiskeysByUser(int userId)
         {
             using (var db = GetConnection())
             {
                 db.Open();
-                var getWhiskeyList = db.Query<WhiskeyDTO>(@"SELECT Whiskey.WhiskeyID
+                var GetWhiskeyListByUser = db.Query<WhiskeyDTO>(@"SELECT Whiskey.WhiskeyID
                                                                     , Whiskey.Brand
                                                                     , Whiskey.Type
                                                                     
                                                             FROM Whiskey");
 
-                return getWhiskeyList;
+                return GetWhiskeyListByUser;
             }
+            throw new NotImplementedException();
         }
 
         public bool Delete(int id)

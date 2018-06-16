@@ -29,9 +29,14 @@ app.config([
                 templateUrl: '/app/partials/cigar_detail.html',
                 controller: 'CigarDetailController'
             })
+            .when("/user/:id",
+            {
+                templateUrl: '/app/partials/user.html',
+                controller: 'UserController'
+            })
             .otherwise({
-                templateUrl: '/app/partials/Cigars.html',
-                controller: 'CigarController'
+                templateUrl: '/app/partials/user.html',
+                controller: 'UserController'
             });
             
     }

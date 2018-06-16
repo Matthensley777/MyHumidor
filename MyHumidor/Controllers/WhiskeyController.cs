@@ -13,14 +13,14 @@ namespace MyHumidor.Controllers
     [RoutePrefix("api/whiskeys")]
     public class WhiskeyController : ApiController
     {
-        [Route, HttpGet]
-        public HttpResponseMessage GetList()
-        {
-            var repository = new WhiskeyRepository();
-            var result = repository.ListAllWhiskeys();
+       // [Route, HttpGet]
+       // public HttpResponseMessage GetList()
+       // {
+       //     var repository = new WhiskeyRepository();
+       //     var result = repository.ListAllWhiskeys();
 
-            return Request.CreateResponse(HttpStatusCode.OK, result);
-        }
+       //     return Request.CreateResponse(HttpStatusCode.OK, result);
+      //  }
 
         [Route, HttpPost]
         public HttpResponseMessage AddWhiskeys(WhiskeyDTO Whiskey)
@@ -42,6 +42,15 @@ namespace MyHumidor.Controllers
             return result
                 ? Request.CreateResponse(HttpStatusCode.OK)
                 : Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Whiskey can't be deleted");
+        }
+
+        [Route("user/{userId}"), HttpGet]
+        public HttpResponseMessage GetWhiskeyListByUser(int userId)
+        {
+            var repository = new WhiskeyRepository();
+            var result = repository.ListAllWhiskeysByUser(userId);
+
+            return Request.CreateResponse(HttpStatusCode.OK, result);
         }
 
     }

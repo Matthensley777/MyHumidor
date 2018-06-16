@@ -13,16 +13,25 @@ namespace MyHumidor.Controllers
     [RoutePrefix("api/cigars")]
     public class CigarController : ApiController
     {
-            [Route, HttpGet]
-            public HttpResponseMessage GetList()
-            {
-                var repository = new CigarRepository();
-                var result = repository.ListAllCigars();
+        [Route, HttpGet]
+        public HttpResponseMessage GetList()
+        {
+            var repository = new CigarRepository();
+            var result = repository.ListAllCigars();
 
-                return Request.CreateResponse(HttpStatusCode.OK, result);
-            }
+            return Request.CreateResponse(HttpStatusCode.OK, result);
+        }
 
-            [Route, HttpPost]
+        [Route("user/{userId}"), HttpGet]
+        public HttpResponseMessage GetListByUser(int userId)
+        {
+            var repository = new CigarRepository();
+            var result = repository.ListAllCigarsByUser(userId);
+
+            return Request.CreateResponse(HttpStatusCode.OK, result);
+        }
+
+        [Route, HttpPost]
             public HttpResponseMessage AddCigars(CigarDTO cigar)
             {
                 var repository = new CigarRepository();

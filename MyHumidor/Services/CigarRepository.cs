@@ -43,6 +43,32 @@ namespace MyHumidor.Services
             }
         }
 
+        public IEnumerable<CigarDTO> ListAllCigarsByUser(int userId)
+        {
+            using (var db = GetConnection())
+            {
+                db.Open();
+                var getCigarList = db.Query<CigarDTO>(@"SELECT Cigar.CigarID
+                                                                    , Cigar.Brand as CigarBrand
+                                                                    , Cigar.Series
+                                                                    , Cigar.Description
+                                                                    , Cigar.Photo
+                                                                    , Cigar.WhiskeyID
+                                                                    , Cigar.UserID
+                                                                    , Cigar.DatePurchased 
+                                                                    , whiskey.Brand as WhiskeyBrand
+
+                                                            FROM Cigar
+                                                                    join whiskey on cigar.WhiskeyID = whiskey.WhiskeyID
+                                                                    where UserID = @userid",new { userId });
+
+
+                return getCigarList;
+            }
+            throw new NotImplementedException();
+            
+        }
+
         public IEnumerable<CigarDTO> ListAllCigars()
         {
             using (var db = GetConnection())

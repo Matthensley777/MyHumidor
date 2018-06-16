@@ -1,7 +1,7 @@
-﻿app.controller("WhiskeyController", ["$location", "$scope", "$http", "$routeParams",
-    function ($location, $scope, $http, $routeParams) {
+﻿app.controller("WhiskeyController", ["$location", "$scope", "$http", "$routeParams", "UserService",
+    function ($location, $scope, $http, $routeParams, UserService) {
 
-        $http.get("/api/whiskeys/").then(function (result) {
+        $http.get(`/api/whiskeys/user/${UserService.getUser().UserID}`).then(function (result) {
             $scope.whiskeys = result.data;
         });
 
@@ -13,11 +13,7 @@
             $location.path(`/whiskeys/new`);
         };
 
-        //$scope.DeleteWhiskey = () => {
-
-            //$http.delete(`/api/whiskeys/${whiskeyId}/delete`);
-            //$location.path(`/whiskeys/`);
-        //};
+        
 
         $scope.DeleteWhiskey = (whiskeyId) => {
 

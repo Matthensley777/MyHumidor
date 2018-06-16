@@ -26,7 +26,8 @@ namespace MyHumidor
                     "~/Scripts/angular.js",
                     "~/Scripts/angular-route.js",
                     "~/app/app.js")
-                .IncludeDirectory("~/app/controllers", "*.js", true));
+                .IncludeDirectory("~/app/controllers", "*.js", true)
+                .IncludeDirectory("~/app/service", "*.js", true));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                 "~/Content/bootstrap.css",
