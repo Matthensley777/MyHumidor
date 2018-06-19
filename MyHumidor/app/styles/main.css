@@ -33,18 +33,22 @@ footer {
 }
 
 .cigarDetail {
-    height: 350px;
-    width: 260px;
+    height: 450px;
+    width: 275px;
     background-color: white;
     border-radius: 30px;
     padding-top: 25px;
+    padding-left: 25px;
+    padding-right: 25px;
 }
 
 .DetailCigar {
     background-color: white;
-    width: 510px;
+    width: 550px;
     border-radius: 30px;
     padding-top: 25px;
+    padding-right: 25px;
+    padding-left: 25px;
 }
 
 .email {
