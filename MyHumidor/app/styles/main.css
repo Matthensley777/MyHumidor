@@ -7,5 +7,54 @@
 }
 
 body {
-    background-color: cornsilk;
+    background-color: black;
+    background-image: url("https://www.hellodoctor.co.za/wp-content/uploads/2015/05/cigar-and-whisky.jpg");
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    height: 100vh;
+    width: 100vw;
+}
+
+.DetailPhoto {
+    width: 500px;
+    background-color: white;
+}
+
+.whiskey {
+    color: white;
+    list-style-type: none;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px; 
+}
+
+.cigarDetail {
+    height: 350px;
+    width: 260px;
+    background-color: white;
+    border-radius: 30px;
+    padding-top: 25px;
+}
+
+.DetailCigar {
+    background-color: white;
+    width: 510px;
+    border-radius: 30px;
+    padding-top: 25px;
+}
+
+.email {
+    color: white;
+}
+
+h2 {
+    color: white;
+}
+
+label {
+    color: white;
 }

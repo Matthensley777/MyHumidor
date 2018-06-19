@@ -5,11 +5,11 @@
 <br />
 <ul ng-repeat="cigar in cigars" class="col-sm-6 col-md-4 photo">
     <li>
-        <a ng-click="cigarDetail(cigar.CigarID)">
-            <img class="image" id="image" ng-src="{{cigar.Photo}}" /><br />
+        <div class="cigarDetail" ng-click="cigarDetail(cigar.CigarID)">
+            <img class="image" id="image" ng-src="{{cigar.Photo}}" /><br /> <br />
             Cigar: {{cigar.CigarID}}, Brand: {{cigar.CigarBrand}}, <br /> Series: {{cigar.Series}}, <br />
             Description: {{cigar.Description}}, <br /> Whiskey Pairing: {{cigar.WhiskeyBrand}}  <br />Purchased Date {{cigar.DatePurchased}}
-        </a>
+        </div>
     </li>
 </ul>
 <br />

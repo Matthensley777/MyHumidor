@@ -3,11 +3,11 @@
 <div ng-show="!edit">
     <ul>
         <li>
-            <a>
-                <img src="{{Cigar.Photo}}" /><br />
-                Cigar {{Cigar.CigarID}}, Brand {{Cigar.CigarBrand}} <br />Series {{Cigar.Series}}<br />
-                Description {{Cigar.Description}}<br /> Whiskey Pairing {{Cigar.WhiskeyBrand}}  <br /> Purchased Date {{Cigar.DatePurchased}}
-            </a>
+            <div class="DetailCigar">
+                <img class="DetailPhoto" src="{{Cigar.Photo}}" /><br />
+                Cigar: {{Cigar.CigarID}}, Brand: {{Cigar.CigarBrand}} <br />Series: {{Cigar.Series}}<br />
+                Description: {{Cigar.Description}}<br /> Whiskey Pairing: {{Cigar.WhiskeyBrand}}  <br /> Purchased Date: {{Cigar.DatePurchased}}
+            </div>
             <div class="container">
                 <button name="edit" class="btn btn-default" ng-click="edits()">Edit</button>
                 <button type="button" class="btn btn-default" ng-click="DeleteCigar()">Delete</button>
