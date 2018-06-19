@@ -25,11 +25,13 @@ namespace MyHumidor.Services
                 var addWhiskey = db.Execute(@"INSERT INTO [dbo].[Whiskey]
                                                        (
                                                        [Brand]
-                                                       ,[Type])
+                                                       ,[Type]
+                                                       ,[UserID])
                                                     VALUES
                                                         (
                                                          @Brand,
-                                                         @Type)", whiskey);
+                                                         @Type,
+                                                         @UserID)", whiskey);
 
                 return addWhiskey == 1;
             }
@@ -44,8 +46,8 @@ namespace MyHumidor.Services
                 var GetWhiskeyListByUser = db.Query<WhiskeyDTO>(@"SELECT Whiskey.WhiskeyID
                                                                     , Whiskey.Brand
                                                                     , Whiskey.Type
-                                                                    
-                                                            FROM Whiskey");
+                                                                    , Whiskey.UserID
+                                                            FROM Whiskey WHERE UserID = @userId", new { userId });
 
                 return GetWhiskeyListByUser;
             }

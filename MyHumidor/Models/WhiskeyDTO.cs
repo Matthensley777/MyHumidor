@@ -10,5 +10,6 @@ namespace MyHumidor.Models
         public int WhiskeyID { get; set; }
         public string Brand { get; set; }
         public string Type { get; set; }
+        public int UserID { get; set; }
     }
 }

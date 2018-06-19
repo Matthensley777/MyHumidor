@@ -60,7 +60,7 @@ namespace MyHumidor.Services
 
                                                             FROM Cigar
                                                                     join whiskey on cigar.WhiskeyID = whiskey.WhiskeyID
-                                                                    where UserID = @userid",new { userId });
+                                                                    where Cigar.UserID = @userid",new { userId });
 
 
                 return getCigarList;

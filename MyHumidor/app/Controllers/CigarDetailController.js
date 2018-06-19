@@ -1,9 +1,9 @@
-﻿app.controller("CigarDetailController", ["$location", "$routeParams", "$scope", "$http",
-    function ($location, $routeParams, $scope, $http, $window) {
+﻿app.controller("CigarDetailController", ["$location", "$routeParams", "$scope", "$http", "UserService",
+    function ($location, $routeParams, $scope, $http, UserService) {
 
         $scope.edit = false;
 
-        $http.get("/api/whiskeys/").then(function (result) {
+        $http.get(`/api/whiskeys/user/${UserService.getUser().UserID}`).then(function (result) {
             $scope.whiskeys = result.data;
         });
 

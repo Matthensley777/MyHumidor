@@ -4,7 +4,7 @@
         $scope.new = (Whiskey) => {
             Whiskey.UserID = UserService.getUser().UserID;
             $http.post("/api/whiskeys/", Whiskey).then(function () {
-                $location.path(`/whiskey`);
+                $location.path(`/whiskeys`);
             }).catch((err) => {
                 console.log("error posting new whiskey", err);
             });
