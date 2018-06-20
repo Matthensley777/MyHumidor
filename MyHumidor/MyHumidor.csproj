@@ -187,6 +187,7 @@
     <Content Include="app\Controllers\NewWhiskeyController.js" />
     <Content Include="app\Controllers\UserController.js" />
     <Content Include="app\Controllers\ViewAllController.js" />
+    <Content Include="app\Controllers\ViewAllDetailController.js" />
     <Content Include="app\Controllers\WhiskeyController.js" />
     <Content Include="app\partials\Cigars.html" />
     <Content Include="app\partials\cigar_detail.html" />
@@ -194,6 +195,7 @@
     <Content Include="app\partials\new_whiskey.html" />
     <Content Include="app\partials\User.html" />
     <Content Include="app\partials\viewall.html" />
+    <Content Include="app\partials\viewalldetail.html" />
     <Content Include="app\partials\Whiskey.html" />
     <Content Include="app\Service\UserService.js" />
     <Content Include="app\styles\main.css" />

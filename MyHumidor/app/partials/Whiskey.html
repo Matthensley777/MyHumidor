@@ -2,7 +2,7 @@
 <ul ng-repeat="whiskey in whiskeys">
     <li>
         <div class="whiskey">
-             Brand: {{whiskey.Brand}}, <br /> Type: {{whiskey.Type}}
+             <b>Brand:</b> {{whiskey.Brand}}, <br /> <b>Type:</b> {{whiskey.Type}}
             <button type="button" class="btn btn-default" ng-click="DeleteWhiskey(whiskey.WhiskeyID)">X</button>
         </div>
         
