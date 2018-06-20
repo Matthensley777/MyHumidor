@@ -1,10 +1,10 @@
-﻿<h2>View</h2>
+﻿<h2>View All</h2>
 <br />
 <br />
 <br />
 <ul ng-repeat="cigar in cigars" class="col-sm-6 col-md-4 photo">
     <li>
-        <div class="cigarDetail" ng-click="cigarDetail(cigar.CigarID)">
+        <div class="cigarDetail" ng-click="viewAllDetail(cigar.CigarID)">
             <img class="image" id="image" ng-src="{{cigar.Photo}}" /><br /> <br />
             Brand: {{cigar.CigarBrand}}, <br /> Series: {{cigar.Series}}, <br />
             Description: {{cigar.Description}}, <br /> Whiskey Pairing: {{cigar.WhiskeyBrand}}  <br />

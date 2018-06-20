@@ -5,8 +5,8 @@
             $scope.cigars = result.data;
         });
 
-        $scope.cigarDetail = (cigarId) => {
-            $location.path(`/cigars/${cigarId}`);
+        $scope.viewAllDetail = (cigarId) => {
+            $location.path(`/viewall/${cigarId}`);
         };
 
        
