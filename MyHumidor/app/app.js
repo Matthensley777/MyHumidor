@@ -34,6 +34,16 @@ app.config([
                 templateUrl: '/app/partials/user.html',
                 controller: 'UserController'
             })
+            .when("/viewall",
+            {
+                templateUrl: '/app/partials/viewall.html',
+                controller: 'ViewAllController'
+            })
+            .when("/viewall/:id",
+            {
+                templateUrl: '/app/partials/viewalldetail.html',
+                controller: 'ViewAllDetailController'
+            })
             .otherwise({
                 templateUrl: '/app/partials/user.html',
                 controller: 'UserController'
